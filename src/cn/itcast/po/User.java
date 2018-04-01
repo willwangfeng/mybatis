@@ -22,6 +22,11 @@ public class User {
 	public void setId(int id) {
 		this.id = id;
 	}
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", sex=" + sex + ", birthday=" + birthday + ", address="
+				+ address + "]";
+	}
 	public String getUsername() {
 		return username;
 	}

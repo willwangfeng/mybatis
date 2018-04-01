@@ -16,6 +16,6 @@
 	resultType:sql输出结果所映射的java对象类型， select指定resultType表示将单条记录映射成的java对象
 	 -->
 	<select id="findUserById" parameterType="int" resultType="cn.itcast.po.User">
-		select * from user where id = #{id}
+		select * from user where id = #{value}
 	</select>
 </mapper>

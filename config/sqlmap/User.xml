@@ -18,4 +18,13 @@
 	<select id="findUserById" parameterType="int" resultType="cn.itcast.po.User">
 		select * from user where id = #{value}
 	</select>
+	
+	<!-- 根据用户名称模糊查询用户信息，可能返回多条
+		resultType表示将单条记录映射成的java对象
+		${}:表示拼接sql串，将接收到的参数不加任何修饰拼在sql中，引起sql注入
+		${value}:接收输入参数的内容，如果传入是简单类型，${}中只能用value
+	 -->
+	<select id="findUserByName" parameterType="String" resultType="cn.itcast.po.User">
+		select * from user where username like "%${value}%"
+	</select>
 </mapper>

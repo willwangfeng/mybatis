@@ -22,7 +22,16 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
 	<!-- 加载Mapper文件 -->
 	<mappers>
-		<mapper resource="sqlmap/User.xml"/>
-		<mapper resource="mapper/UserMapper.xml"/>
+		<!-- <mapper resource="sqlmap/User.xml"/>
+		<mapper resource="mapper/UserMapper.xml"/> -->
+		
+		<!-- <mapper class="cn.itcast.mapper.UserMapper"/> -->
+		
+		<!-- 批量加载
+			指定Mapper接口的包名，mybatis自动扫描包下的所有Mapper接口进行加载
+			遵循一些规范：需要将Mapper接口类名与Mapper.xml映射文件名称保持一致，且在一个目录中
+			前提是：使用的Mapper代理方式
+		 -->
+		<package name="cn.itcast.mapper"/>
 	</mappers>
 </configuration>

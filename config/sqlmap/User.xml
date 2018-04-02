@@ -27,4 +27,12 @@
 	<select id="findUserByName" parameterType="String" resultType="cn.itcast.po.User">
 		select * from user where username like "%${value}%"
 	</select>
+	
+	<!-- 添加用户
+		parameterType:指定输入参数类型为pojo（包括用户信息）
+		#{}中指定pojo属性名，接收到pojo的属性值，mybatis通过OGNL获取对象的属性值
+	 -->
+	<insert id="insertUser" parameterType="cn.itcast.po.User">
+		insert into user(id,username,birthday,sex,address) value(#{id},#{username},#{birthday},#{sex},#{address})
+	</insert>
 </mapper>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.itcast.mapper.UserMapper">
+	<resultMap type="user" id="userResultMap">
+		<id column="id_" property="id"/>
+		<result column="username_" property="username"/>
+	</resultMap>
+	<select id="findUserById" parameterType="int" resultType="user">
+		select * from user where id = #{value}
+	</select>
+	
+	<select id="findUserByIdResultMap" parameterType="int" resultMap="userResultMap">
+		select id id_,username username_ from user where id = #{value}
+	</select>
+</mapper>

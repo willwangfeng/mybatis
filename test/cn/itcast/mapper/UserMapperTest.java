@@ -2,6 +2,7 @@ package cn.itcast.mapper;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -10,6 +11,8 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Before;
 import org.junit.Test;
 
+import cn.itcast.po.Orders;
+import cn.itcast.po.OrdersCustom;
 import cn.itcast.po.User;
 
 public class UserMapperTest {
@@ -45,5 +48,15 @@ public class UserMapperTest {
 		User user = userMapper.findUserByIdResultMap(1);
 		System.out.println(user);
 	}
+	
+	@Test
+	public void testFindOrdersById() throws IOException {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		//创建UserMapper对象
+		OrderMapperCustom mapper = sqlSession.getMapper(OrderMapperCustom.class);
+		List<OrdersCustom> list = mapper.findOrderById();
+		System.out.println(list);
+	}
+	
 
 }

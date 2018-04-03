@@ -4,7 +4,7 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="cn.itcast.mapper.OrderMapperCustom">
-	<select id="findOrderById" resultType="cn.itcast.po.OrdersCustom">
+	<select id="findOrdersUser" resultType="cn.itcast.po.OrdersCustom">
 		select orders.*,
 		user.username,
 		user.sex, 

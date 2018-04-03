@@ -7,5 +7,5 @@ import cn.itcast.po.OrdersCustom;
 
 public interface OrderMapperCustom {
 	
-	public List<OrdersCustom> findOrderById() throws IOException;
+	public List<OrdersCustom> findOrdersUser() throws IOException;
 }

@@ -50,11 +50,11 @@ public class UserMapperTest {
 	}
 	
 	@Test
-	public void testFindOrdersById() throws IOException {
+	public void testFindOrdersUser() throws IOException {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		//创建UserMapper对象
 		OrderMapperCustom mapper = sqlSession.getMapper(OrderMapperCustom.class);
-		List<OrdersCustom> list = mapper.findOrderById();
+		List<OrdersCustom> list = mapper.findOrdersUser();
 		System.out.println(list);
 	}
 	

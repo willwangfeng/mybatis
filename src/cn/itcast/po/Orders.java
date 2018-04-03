@@ -9,6 +9,7 @@ public class Orders {
 	private Date createtime;
 	private String note;
 	
+	private User user;
 	public int getId() {
 		return id;
 	}
@@ -38,5 +39,11 @@ public class Orders {
 	}
 	public void setNote(String note) {
 		this.note = note;
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
 	}
 }

@@ -58,5 +58,12 @@ public class UserMapperTest {
 		System.out.println(list);
 	}
 	
-
+	@Test
+	public void testFindOrdersUserResultMap() throws IOException {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		//创建UserMapper对象
+		OrderMapperCustom mapper = sqlSession.getMapper(OrderMapperCustom.class);
+		List<Orders> list = mapper.findOrdersUserResultMap();
+		System.out.println(list);
+	}
 }
